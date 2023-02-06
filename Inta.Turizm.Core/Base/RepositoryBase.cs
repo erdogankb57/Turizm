@@ -95,7 +95,7 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<IList<TEntity>> Find(Expression<Func<TEntity, bool>>? filter)
+        public DataResult<IList<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, Expression<Func<TEntity, object>>? includes = null)
         {
             DataResult<IList<TEntity>> result = new DataResult<IList<TEntity>>();
             try
@@ -103,7 +103,11 @@ namespace Inta.Turizm.Core.Base
                 if (_dbContext != null)
                 {
                     if (filter == null)
-                        result.Data = _dbContext.Set<TEntity>().AsNoTracking().ToList();
+                    {
+                        var data = _dbContext.Set<TEntity>();
+                        if (includes != null)
+                            result.Data = data.Include(includes).AsNoTracking().ToList();
+                    }
                     else
                         result.Data = _dbContext.Set<TEntity>().AsNoTracking().Where(filter).ToList();
 

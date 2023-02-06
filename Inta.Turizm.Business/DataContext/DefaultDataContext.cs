@@ -21,9 +21,16 @@ namespace Inta.Turizm.Business.DataContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("dbo");
+
+             modelBuilder.Entity<Hotel>()
+            .HasMany<HotelImage>(g => g.HotelImages)
+            .WithOne(s => s.CurrentHotel)
+            .HasForeignKey(s => s.HotelId);
         }
 
-        public DbSet<Banner> Hotels { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<HotelImage> HotelImages { get; set; }
+
 
 
     }

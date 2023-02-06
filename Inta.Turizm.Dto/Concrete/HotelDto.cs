@@ -2,22 +2,21 @@
 
 namespace Inta.Turizm.Dto.Concrete
 {
-    public class BannerDto : IDto
+    public class HotelDto : IDto
     {
-        public BannerDto()
+        public HotelDto()
         {
 
         }
 		public int Id { get; set; }
-		public int? SystemUserId { get; set; }
-		public int? LanguageId { get; set; }
-		public int? BannerTypeId { get; set; }
-		public string Name { get; set; }
-		public string? Link { get; set; }
-		public int? TargetId { get; set; }
-		public string? ShortExplanation { get; set; }
-		public int OrderNumber { get; set; }
-		public string? Image { get; set; }
+		public string? Name { get; set; }
+		public string? Explanation { get; set; }
+		public string? Adress { get; set; }
+		public string? Phone { get; set; }
+		public string? Logo { get; set; }
+		public DateTime? RecordDate { get; set; }
 		public bool IsActive { get; set; }
+
+		public List<HotelImageDto> HotelImages { get; set; }
 	}
 }

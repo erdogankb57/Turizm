@@ -12,43 +12,43 @@ namespace Inta.Turizm.Business.Service
     public class HotelService : IHotelService
     {
         private IMapper _mapper;
-        RepositoryBase<Banner, DefaultDataContext>? manager;
+        RepositoryBase<Hotel, DefaultDataContext>? manager;
         UnitOfWork<DefaultDataContext> unitOfWork;
         public HotelService(IMapper mapper)
         {
             unitOfWork = new UnitOfWork<DefaultDataContext>();
-            manager = unitOfWork.AddRepository<Banner>();
+            manager = unitOfWork.AddRepository<Hotel>();
             _mapper = mapper;
         }
 
-        public DataResult<BannerDto> Delete(BannerDto dto)
+        public DataResult<HotelDto> Delete(HotelDto dto)
         {
             throw new NotImplementedException();
         }
 
-        public DataResult<List<BannerDto>> Find(Expression<Func<Banner, bool>>? filter = null)
+        public DataResult<List<HotelDto>> Find(Expression<Func<Hotel, bool>>? filter, Expression<Func<Hotel, object>>? includes = null)
         {
-            var data = manager.Find(filter);
-            var result = _mapper.Map<DataResult<List<BannerDto>>>(data);
+            var data = manager.Find(filter, includes);
+            var result = _mapper.Map<DataResult<List<HotelDto>>>(data);
             return result;
         }
 
-        public DataResult<BannerDto> Get(Expression<Func<Banner, bool>>? filter = null)
+        public DataResult<HotelDto> Get(Expression<Func<Hotel, bool>>? filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public DataResult<BannerDto> GetById(int id)
+        public DataResult<HotelDto> GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public DataResult<BannerDto> Save(BannerDto dto)
+        public DataResult<HotelDto> Save(HotelDto dto)
         {
             throw new NotImplementedException();
         }
 
-        public DataResult<BannerDto> Update(BannerDto dto, string[]? updateFields = null)
+        public DataResult<HotelDto> Update(HotelDto dto, string[]? updateFields = null)
         {
             throw new NotImplementedException();
         }
