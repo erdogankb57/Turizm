@@ -1,0 +1,15 @@
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\Inta.Turizm.Core.csproj.AssemblyReference.cache
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\Inta.Turizm.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\Inta.Turizm.Core.AssemblyInfoInputs.cache
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\Inta.Turizm.Core.AssemblyInfo.cs
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\Inta.Turizm.Core.csproj.CoreCompileInputs.cache
+D:\Repos\Turizm\Inta.Turizm.Core\bin\Debug\net6.0\Inta.Turizm.Core.deps.json
+D:\Repos\Turizm\Inta.Turizm.Core\bin\Debug\net6.0\Inta.Turizm.Core.dll
+D:\Repos\Turizm\Inta.Turizm.Core\bin\Debug\net6.0\Inta.Turizm.Core.pdb
+D:\Repos\Turizm\Inta.Turizm.Core\bin\Debug\net6.0\Inta.Turizm.Logging.dll
+D:\Repos\Turizm\Inta.Turizm.Core\bin\Debug\net6.0\Inta.Turizm.Logging.pdb
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\Inta.Turizm.Core.csproj.CopyComplete
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\Inta.Turizm.Core.dll
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\refint\Inta.Turizm.Core.dll
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\Inta.Turizm.Core.pdb
+D:\Repos\Turizm\Inta.Turizm.Core\obj\Debug\net6.0\ref\Inta.Turizm.Core.dll
