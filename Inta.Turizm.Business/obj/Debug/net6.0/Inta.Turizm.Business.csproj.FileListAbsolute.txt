@@ -10,3 +10,10 @@ D:\Repos\Turizm\Inta.Turizm.Business\obj\Debug\net6.0\Inta.Turizm.Business.dll
 D:\Repos\Turizm\Inta.Turizm.Business\obj\Debug\net6.0\refint\Inta.Turizm.Business.dll
 D:\Repos\Turizm\Inta.Turizm.Business\obj\Debug\net6.0\Inta.Turizm.Business.pdb
 D:\Repos\Turizm\Inta.Turizm.Business\obj\Debug\net6.0\ref\Inta.Turizm.Business.dll
+D:\Repos\Turizm\Inta.Turizm.Business\bin\Debug\net6.0\Inta.Turizm.Core.dll
+D:\Repos\Turizm\Inta.Turizm.Business\bin\Debug\net6.0\Inta.Turizm.Entity.dll
+D:\Repos\Turizm\Inta.Turizm.Business\bin\Debug\net6.0\Inta.Turizm.Logging.dll
+D:\Repos\Turizm\Inta.Turizm.Business\bin\Debug\net6.0\Inta.Turizm.Entity.pdb
+D:\Repos\Turizm\Inta.Turizm.Business\bin\Debug\net6.0\Inta.Turizm.Core.pdb
+D:\Repos\Turizm\Inta.Turizm.Business\bin\Debug\net6.0\Inta.Turizm.Logging.pdb
+D:\Repos\Turizm\Inta.Turizm.Business\obj\Debug\net6.0\Inta.Turizm.Business.csproj.CopyComplete
