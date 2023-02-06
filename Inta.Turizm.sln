@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inta.Turizm.Api", "Inta.Turizm.Api\Inta.Turizm.Api.csproj", "{D638E264-CA2F-4175-A5E9-F9D67C9D0A13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inta.Turizm.Api", "Inta.Turizm.Api\Inta.Turizm.Api.csproj", "{D638E264-CA2F-4175-A5E9-F9D67C9D0A13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Data", "0.Data", "{BA3CFB87-FD81-4267-A797-9745131A42A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inta.Turizm.Core", "Inta.Turizm.Core\Inta.Turizm.Core.csproj", "{FEB08496-FFFE-4852-BE98-7F29DA2292F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Framework", "1.Framework", "{7E9864D2-6826-42B8-9B47-57733D2BB343}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Bussiness", "2.Bussiness", "{AF46833B-CA54-44F5-BDDF-DEAD019D1FD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inta.Turizm.Entity", "Inta.Turizm.Entity\Inta.Turizm.Entity.csproj", "{36771B91-9031-46F4-BCDD-58FD2339D1D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inta.Turizm.Dto", "Inta.Turizm.Dto\Inta.Turizm.Dto.csproj", "{9CAD1345-E7E9-43BE-9AB4-947544880E76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inta.Turizm.Business", "Inta.Turizm.Business\Inta.Turizm.Business.csproj", "{6B1FC8AB-BAFC-4952-AF53-D8BD112A3C41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +29,31 @@ Global
 		{D638E264-CA2F-4175-A5E9-F9D67C9D0A13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D638E264-CA2F-4175-A5E9-F9D67C9D0A13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D638E264-CA2F-4175-A5E9-F9D67C9D0A13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEB08496-FFFE-4852-BE98-7F29DA2292F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB08496-FFFE-4852-BE98-7F29DA2292F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB08496-FFFE-4852-BE98-7F29DA2292F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB08496-FFFE-4852-BE98-7F29DA2292F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36771B91-9031-46F4-BCDD-58FD2339D1D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36771B91-9031-46F4-BCDD-58FD2339D1D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36771B91-9031-46F4-BCDD-58FD2339D1D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36771B91-9031-46F4-BCDD-58FD2339D1D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CAD1345-E7E9-43BE-9AB4-947544880E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CAD1345-E7E9-43BE-9AB4-947544880E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CAD1345-E7E9-43BE-9AB4-947544880E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CAD1345-E7E9-43BE-9AB4-947544880E76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B1FC8AB-BAFC-4952-AF53-D8BD112A3C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B1FC8AB-BAFC-4952-AF53-D8BD112A3C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B1FC8AB-BAFC-4952-AF53-D8BD112A3C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B1FC8AB-BAFC-4952-AF53-D8BD112A3C41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FEB08496-FFFE-4852-BE98-7F29DA2292F8} = {7E9864D2-6826-42B8-9B47-57733D2BB343}
+		{36771B91-9031-46F4-BCDD-58FD2339D1D0} = {AF46833B-CA54-44F5-BDDF-DEAD019D1FD9}
+		{9CAD1345-E7E9-43BE-9AB4-947544880E76} = {AF46833B-CA54-44F5-BDDF-DEAD019D1FD9}
+		{6B1FC8AB-BAFC-4952-AF53-D8BD112A3C41} = {AF46833B-CA54-44F5-BDDF-DEAD019D1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8C96A5A6-FBA2-4D23-AF9D-3CA08515B0FD}
