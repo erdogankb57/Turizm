@@ -19,42 +19,42 @@ namespace Inta.Turizm.Business.Service
     public class HotelService : IHotelService
     {
         private IMapper _mapper;
-        RepositoryBase<Hotel, DefaultDataContext>? manager;
+        RepositoryBase<Banner, DefaultDataContext>? manager;
         UnitOfWork<DefaultDataContext> unitOfWork;
         public HotelService()
         {
             unitOfWork = new UnitOfWork<DefaultDataContext>();
-            manager = unitOfWork.AddRepository<Hotel>();
+            manager = unitOfWork.AddRepository<Banner>();
         }
 
-        public DataResult<HotelDto> Delete(HotelDto dto)
+        public DataResult<BannerDto> Delete(BannerDto dto)
         {
             throw new NotImplementedException();
         }
 
-        public DataResult<List<HotelDto>> Find(Expression<Func<Hotel, bool>>? filter = null)
+        public DataResult<List<BannerDto>> Find(Expression<Func<Banner, bool>>? filter = null)
         {
             var data = manager.Find(filter);
-            var result = _mapper.Map<DataResult<List<HotelDto>>>(data);
+            var result = _mapper.Map<DataResult<List<BannerDto>>>(data);
             return result;
         }
 
-        public DataResult<HotelDto> Get(Expression<Func<Hotel, bool>>? filter = null)
+        public DataResult<BannerDto> Get(Expression<Func<Banner, bool>>? filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public DataResult<HotelDto> GetById(int id)
+        public DataResult<BannerDto> GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public DataResult<HotelDto> Save(HotelDto dto)
+        public DataResult<BannerDto> Save(BannerDto dto)
         {
             throw new NotImplementedException();
         }
 
-        public DataResult<HotelDto> Update(HotelDto dto, string[]? updateFields = null)
+        public DataResult<BannerDto> Update(BannerDto dto, string[]? updateFields = null)
         {
             throw new NotImplementedException();
         }

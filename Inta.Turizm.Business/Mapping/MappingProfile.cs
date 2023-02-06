@@ -15,13 +15,13 @@ namespace Inta.Turizm.Business.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<Hotel, HotelDto>();
+            CreateMap<Banner, BannerDto>();
 
-            CreateMap<HotelDto, Hotel>();
-            CreateMap<DataResult<IList<Hotel>>, DataResult<List<HotelDto>>>();
-            CreateMap<DataResult<List<HotelDto>>, DataResult<IList<Hotel>>>();
-            CreateMap<Expression<Func<Hotel, bool>>, Expression<Func<HotelDto, bool>>>();
-            CreateMap<Expression<Func<HotelDto, bool>>, Expression<Func<Hotel, bool>>>();
+            CreateMap<BannerDto, Banner>();
+            CreateMap<DataResult<IList<Banner>>, DataResult<List<BannerDto>>>();
+            CreateMap<DataResult<List<BannerDto>>, DataResult<IList<Banner>>>();
+            CreateMap<Expression<Func<Banner, bool>>, Expression<Func<BannerDto, bool>>>();
+            CreateMap<Expression<Func<BannerDto, bool>>, Expression<Func<Banner, bool>>>();
 
         }
     }

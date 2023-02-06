@@ -23,7 +23,7 @@ namespace Inta.Turizm.Business.DataContext
             modelBuilder.HasDefaultSchema("dbo");
         }
 
-        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Banner> Hotels { get; set; }
 
 
     }

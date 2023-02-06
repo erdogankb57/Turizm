@@ -2,9 +2,9 @@
 
 namespace Inta.Turizm.Dto.Concrete
 {
-    public class HotelDto : IDto
+    public class BannerDto : IDto
     {
-        public HotelDto()
+        public BannerDto()
         {
 
         }

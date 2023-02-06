@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace Inta.Turizm.Entity.Concrete
 {
     [Table("Banner")]
-    public class Hotel : IEntity
+    public class Banner : IEntity
     {
-        public Hotel()
+        public Banner()
         {
         }
 

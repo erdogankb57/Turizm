@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Inta.Turizm.Business.Abstract
 {
-    public interface IHotelService : IBaseService<HotelDto, Hotel>
+    public interface IHotelService : IBaseService<BannerDto, Banner>
     {
     }
 }

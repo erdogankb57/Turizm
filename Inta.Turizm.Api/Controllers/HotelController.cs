@@ -18,7 +18,7 @@ namespace Inta.Turizm.Api.Controllers
         }
         // GET: api/<HotelController>
         [HttpGet]
-        public IEnumerable<HotelDto> Get()
+        public IEnumerable<BannerDto> Get()
         {
             return _hotelService.Find().Data;
         }
