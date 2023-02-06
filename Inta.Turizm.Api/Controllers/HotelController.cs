@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Inta.Turizm.Business.Abstract;
+using Inta.Turizm.Dto.Concrete;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,17 +10,24 @@ namespace Inta.Turizm.Api.Controllers
     [ApiController]
     public class HotelController : ControllerBase
     {
+        private IHotelService _hotelService;
+
+        public HotelController(IHotelService hotelService)
+        {
+            _hotelService = hotelService;
+        }
         // GET: api/<HotelController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<HotelDto> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _hotelService.Find().Data;
         }
 
         // GET api/<HotelController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
+
             return "value";
         }
 

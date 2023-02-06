@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Inta.Turizm.Entity.Concrete;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace Inta.Turizm.Business.DataContext
@@ -22,7 +23,7 @@ namespace Inta.Turizm.Business.DataContext
             modelBuilder.HasDefaultSchema("dbo");
         }
 
-        //public DbSet<GeneralSettings> GeneralSettingss { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
 
 
     }

@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "iQzZ0t6b3pyKbpz/yHUWSw0xakO4WarFk+QHWbmC7gvo0fZGQxURXVphPNN/7r6n94k1wIeaiwPmIw30oI0dTA==",
+  "dgSpecHash": "tppCeCE0XqfOHAqHPngU8SPtUktSDJ5MPKyJjofuKIYzZJEoIN3ekU1PaH8lSxgc2hb3mn8b4ATZhj4UZJHGGw==",
   "success": true,
   "projectFilePath": "D:\\Repos\\Turizm\\Inta.Turizm.Business\\Inta.Turizm.Business.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\erdog\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\erdog\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\erdog\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.0\\microsoft.data.sqlclient.5.1.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.0\\microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.2\\microsoft.entityframeworkcore.7.0.2.nupkg.sha512",
