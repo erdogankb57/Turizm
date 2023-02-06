@@ -93,3 +93,4 @@ D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Inta.Turizm.Core.pdb
 D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Inta.Turizm.Dto.pdb
 D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Inta.Turizm.Entity.pdb
 D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Inta.Turizm.Logging.pdb
+D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

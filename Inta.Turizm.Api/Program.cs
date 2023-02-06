@@ -8,7 +8,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
 /*Bussiness katmanýndaki classlar otomatik olarak enjecte edilir.*/
@@ -24,6 +23,7 @@ foreach (var intfc in allProviderTypes.Where(t => t.IsInterface && t.Namespace.C
 /*Bussiness katmanındaki classlar otomatik olarak enjecte edilir.*/
 
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 

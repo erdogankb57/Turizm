@@ -1,18 +1,11 @@
 ﻿using AutoMapper;
 using Inta.Turizm.Business.Abstract;
 using Inta.Turizm.Business.DataContext;
-using Inta.Turizm.Core.Abstract;
 using Inta.Turizm.Core.Base;
 using Inta.Turizm.Core.Model;
-using Inta.Turizm.Dto.Abstract;
 using Inta.Turizm.Dto.Concrete;
 using Inta.Turizm.Entity.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Inta.Turizm.Business.Service
 {
@@ -21,10 +14,11 @@ namespace Inta.Turizm.Business.Service
         private IMapper _mapper;
         RepositoryBase<Banner, DefaultDataContext>? manager;
         UnitOfWork<DefaultDataContext> unitOfWork;
-        public HotelService()
+        public HotelService(IMapper mapper)
         {
             unitOfWork = new UnitOfWork<DefaultDataContext>();
             manager = unitOfWork.AddRepository<Banner>();
+            _mapper = mapper;
         }
 
         public DataResult<BannerDto> Delete(BannerDto dto)
