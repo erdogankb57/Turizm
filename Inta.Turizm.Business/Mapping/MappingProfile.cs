@@ -32,6 +32,25 @@ namespace Inta.Turizm.Business.Mapping
                             IsActive = n.IsActive,
                             HotelId = n.HotelId,
                             Id = n.Id
+                        }).ToList(),
+                        HotelRooms = s.HotelRooms.Select(n => new HotelRoomDto
+                        {
+                            Explanation = n.Explanation,
+                            HotelId = n.HotelId,
+                            Id = n.Id,
+                            IsActive = n.IsActive,
+                            Name = n.Name,
+                            NumberOfPeople = n.NumberOfPeople,
+                            RecordDate = n.RecordDate,
+                            HotelRoomImages = n.HotelRoomImages.Select(n => new HotelRoomImageDto
+                            {
+                                RecordDate = n.RecordDate,
+                                HoteRoomlId = n.HoteRoomlId,
+                                Image = n.Image,
+                                Id = n.Id,
+                                IsActive = !n.IsActive,
+                                Name = n.Name
+                            }).ToList()
                         }).ToList()
                     }) : null
                     )

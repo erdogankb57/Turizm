@@ -15,7 +15,9 @@ namespace Inta.Turizm.Entity.Concrete
         public Hotel()
         {
 			HotelImages = new List<HotelImage>();
-        }
+			HotelRooms = new List<HotelRoom>();
+
+		}
 
 		[Key]
 		[Column("Id")]

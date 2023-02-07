@@ -20,6 +20,7 @@ namespace Inta.Turizm.Dto.Concrete
         public int? NumberOfPeople { get; set; }
         public DateTime? RecordDate { get; set; }
         public bool IsActive { get; set; }
+        virtual public List<HotelRoomImageDto> HotelRoomImages { get; set; }
 
 
     }
