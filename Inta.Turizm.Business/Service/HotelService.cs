@@ -21,9 +21,13 @@ namespace Inta.Turizm.Business.Service
             _mapper = mapper;
         }
 
-        public DataResult<HotelDto> Delete(HotelDto dto)
+        public DataResult<HotelDto> Delete(int Id)
         {
-            throw new NotImplementedException();
+            var entity = manager.Get(v => v.Id == Id).Data;
+            var data = manager.Delete(entity);
+            unitOfWork.SaveChanges();
+            var result = _mapper.Map<DataResult<HotelDto>>(data);
+            return result;
         }
 
         public DataResult<List<HotelDto>> Find(Expression<Func<Hotel, bool>>? filter, string[]? includes = null, int? skipNumber = null, int? takeNumber = null)
@@ -49,12 +53,18 @@ namespace Inta.Turizm.Business.Service
 
         public DataResult<HotelDto> Save(HotelDto dto)
         {
-            throw new NotImplementedException();
+            var data = manager.Save(_mapper.Map<HotelDto,Hotel>(dto));
+            unitOfWork.SaveChanges();
+            var result = _mapper.Map<DataResult<HotelDto>>(data);
+            return result;
         }
 
         public DataResult<HotelDto> Update(HotelDto dto, string[]? updateFields = null)
         {
-            throw new NotImplementedException();
+            var data = manager.Update(_mapper.Map<HotelDto, Hotel>(dto));
+            unitOfWork.SaveChanges();
+            var result = _mapper.Map<DataResult<HotelDto>>(data);
+            return result;
         }
     }
 }

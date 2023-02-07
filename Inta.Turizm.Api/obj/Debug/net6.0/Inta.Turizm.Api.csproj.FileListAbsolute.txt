@@ -96,3 +96,5 @@ D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Inta.Turizm.Logging.pdb
 D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Castle.Core.dll
 D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Proxies.dll
+D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Repos\Turizm\Inta.Turizm.Api\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll

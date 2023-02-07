@@ -18,7 +18,7 @@ namespace Inta.Turizm.Api.Controllers
         {
             _hotelService = hotelService;
         }
-        // GET: api/<HotelController>
+
         [HttpGet]
         public DataResult<List<HotelDto>> Get()
         {
@@ -37,15 +37,16 @@ namespace Inta.Turizm.Api.Controllers
             return _hotelService.Save(value);
         }
 
+        [HttpPut]
         public DataResult<HotelDto> Put([FromBody] HotelDto value)
         {
             return _hotelService.Update(value);
         }
 
+        [HttpDelete]
         public DataResult<HotelDto> Delete(int id)
         {
-            var dto = _hotelService.Get(v => v.Id == id).Data;
-            return _hotelService.Update(dto);
+            return _hotelService.Delete(id);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Inta.Turizm.Business.Abstract
         DataResult<List<IDto>> Find(Expression<Func<IEntity, bool>>? filter = null, string[]? includes = null, int? skipNumber = null, int? takeNumber = null);
         DataResult<IDto> Save(IDto dto);
         DataResult<IDto> Update(IDto dto, string[]? updateFields = null);
-        DataResult<IDto> Delete(IDto dto);
+        DataResult<IDto> Delete(int Id);
         DataResult<IDto> Get(Expression<Func<IEntity, bool>>? filter = null, string[]? includes = null);
     }
 }

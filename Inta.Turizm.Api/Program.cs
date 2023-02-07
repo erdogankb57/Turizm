@@ -7,6 +7,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Json dönerken camel case özelliði pascal case olarak deðiþtirildi.
+builder.Services.AddMvc(setupAction =>
+{
+    setupAction.EnableEndpointRouting = false;
+}).AddJsonOptions(jsonOptions =>
+{
+    jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 

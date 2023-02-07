@@ -1,4 +1,5 @@
 ﻿using Inta.Turizm.Dto.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Inta.Turizm.Dto.Concrete
 {
@@ -6,7 +7,7 @@ namespace Inta.Turizm.Dto.Concrete
     {
         public HotelDto()
         {
-
+			this.HotelImages = new List<HotelImageDto>();
         }
 		public int Id { get; set; }
 		public string? Name { get; set; }
@@ -17,6 +18,7 @@ namespace Inta.Turizm.Dto.Concrete
 		public DateTime? RecordDate { get; set; }
 		public bool IsActive { get; set; }
 
+		[FromBody]
 		public List<HotelImageDto> HotelImages { get; set; }
 	}
 }

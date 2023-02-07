@@ -59,6 +59,10 @@ namespace Inta.Turizm.Business.Mapping
                     }).ToList()
                 }));
 
+            CreateMap<Hotel, HotelDto>();
+            CreateMap<HotelDto, Hotel>();
+
+
         }
     }
 }
