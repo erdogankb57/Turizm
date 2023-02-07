@@ -19,6 +19,6 @@ namespace Inta.Turizm.Dto.Concrete
 		public bool IsActive { get; set; }
 
 		[FromBody]
-		public List<HotelImageDto> HotelImages { get; set; }
+		public virtual List<HotelImageDto> HotelImages { get; set; }
 	}
 }

@@ -1,4 +1,6 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using System.Text.Json.Serialization;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -14,6 +16,7 @@ builder.Services.AddMvc(setupAction =>
 }).AddJsonOptions(jsonOptions =>
 {
     jsonOptions.JsonSerializerOptions.PropertyNamingPolicy = null;
+    jsonOptions.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
@@ -32,7 +35,6 @@ foreach (var intfc in allProviderTypes.Where(t => t.IsInterface && t.Namespace.C
 
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,6 +42,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
 }
 
 app.UseHttpsRedirection();
