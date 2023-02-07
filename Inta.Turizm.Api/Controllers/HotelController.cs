@@ -1,4 +1,5 @@
 ﻿using Inta.Turizm.Business.Abstract;
+using Inta.Turizm.Core.Model;
 using Inta.Turizm.Dto.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
@@ -19,38 +20,32 @@ namespace Inta.Turizm.Api.Controllers
         }
         // GET: api/<HotelController>
         [HttpGet]
-        public List<HotelDto> Get()
+        public DataResult<List<HotelDto>> Get()
         {
-            //return _hotelService.Find(null, new string[] { "HotelImages", "HotelImages.HotelVersions" }).Data;
-
-            //return _hotelService.GetById(1).Data;
-            return _hotelService.Find(v => v.Id > 0, new string[] { "HotelImages" }, 0, 10).Data;
+            return _hotelService.Find(v => v.Id > 0, new string[] { "HotelImages" }, 0, 10);
         }
 
-        // GET api/<HotelController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public DataResult<HotelDto> Get(int id)
         {
-
-            return "value";
+            return _hotelService.Get(v=> v.Id == id, new string[] { "HotelImages" });
         }
 
-        // POST api/<HotelController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public DataResult<HotelDto> Post([FromBody] HotelDto value)
         {
+            return _hotelService.Save(value);
         }
 
-        // PUT api/<HotelController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public DataResult<HotelDto> Put([FromBody] HotelDto value)
         {
+            return _hotelService.Update(value);
         }
 
-        // DELETE api/<HotelController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        public DataResult<HotelDto> Delete(int id)
         {
+            var dto = _hotelService.Get(v => v.Id == id).Data;
+            return _hotelService.Update(dto);
         }
     }
 }
