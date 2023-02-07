@@ -95,9 +95,9 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<IList<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, Expression<Func<TEntity, object>>? includes = null)
+        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, Expression<Func<TEntity, object>>? includes = null)
         {
-            DataResult<IList<TEntity>> result = new DataResult<IList<TEntity>>();
+            DataResult<List<TEntity>> result = new DataResult<List<TEntity>>();
             try
             {
                 if (_dbContext != null)
@@ -116,7 +116,7 @@ namespace Inta.Turizm.Core.Base
             }
             catch (Exception ex)
             {
-                result.Data = default(IList<TEntity>);
+                result.Data = default(List<TEntity>);
                 result.ResultType = MessageTypeResult.Error;
                 result.ErrorMessage = ex.ToString();
 

@@ -10,25 +10,32 @@ namespace Inta.Turizm.Business.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<Hotel, HotelDto>();
-
-            CreateMap<HotelDto, Hotel>();
-            CreateMap<DataResult<IList<Hotel>>, DataResult<List<HotelDto>>>();
-            CreateMap<DataResult<List<Hotel>>, DataResult<List<HotelDto>>>();
-            CreateMap<DataResult<List<HotelDto>>, DataResult<IList<Hotel>>>();
-            CreateMap<DataResult<List<HotelDto>>, DataResult<List<Hotel>>>();
-            CreateMap<Expression<Func<Hotel, bool>>, Expression<Func<HotelDto, bool>>>();
-            CreateMap<Expression<Func<HotelDto, bool>>, Expression<Func<Hotel, bool>>>();
-
-
-            CreateMap<HotelImageDto, HotelImage>();
-            CreateMap<DataResult<IList<HotelImage>>, DataResult<List<HotelImageDto>>>();
-            CreateMap<DataResult<List<HotelImage>>, DataResult<List<HotelImageDto>>>();
-            CreateMap<DataResult<List<HotelImageDto>>, DataResult<IList<HotelImage>>>();
-            CreateMap<DataResult<List<HotelImageDto>>, DataResult<List<HotelImage>>>();
-            CreateMap<Expression<Func<HotelImage, bool>>, Expression<Func<HotelImageDto, bool>>>();
-            CreateMap<Expression<Func<HotelImageDto, bool>>, Expression<Func<HotelImage, bool>>>();
-
+            CreateMap<DataResult<List<Hotel>>, DataResult<List<HotelDto>>>()
+                .ForMember(dest =>
+                dest.Data,
+                act => act.MapFrom(
+                    src => (src.Data != null ? src.Data.Select(s => new HotelDto
+                    {
+                        Adress = s.Adress,
+                        Explanation = s.Explanation,
+                        Id = s.Id,
+                        IsActive = s.IsActive,
+                        Logo = s.Phone,
+                        Name = s.Name,
+                        Phone = s.Phone,
+                        RecordDate = s.RecordDate,
+                        HotelImages = s.HotelImages.Select(n => new HotelImageDto
+                        {
+                            Image = n.Image,
+                            RecordDate = n.RecordDate,
+                            Name = n.Name,
+                            IsActive = n.IsActive,
+                            HotelId = n.HotelId,
+                            Id = n.Id
+                        }).ToList()
+                    }) : null
+                    )
+               ));
 
         }
     }

@@ -28,7 +28,7 @@ namespace Inta.Turizm.Business.Service
 
         public DataResult<List<HotelDto>> Find(Expression<Func<Hotel, bool>>? filter, Expression<Func<Hotel, object>>? includes = null)
         {
-            var data = manager.Find(filter, includes);
+            var data = manager.Find(filter, includes); 
             var result = _mapper.Map<DataResult<List<HotelDto>>>(data);
             return result;
         }
