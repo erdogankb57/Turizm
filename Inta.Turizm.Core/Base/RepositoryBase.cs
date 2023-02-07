@@ -95,7 +95,7 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, Expression<Func<TEntity, object>>? includes = null)
+        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, string[]? inclueds = null)
         {
             DataResult<List<TEntity>> result = new DataResult<List<TEntity>>();
             try
@@ -105,8 +105,8 @@ namespace Inta.Turizm.Core.Base
                     if (filter == null)
                     {
                         var data = _dbContext.Set<TEntity>();
-                        if (includes != null)
-                            result.Data = data.Include(includes).AsNoTracking().ToList();
+                        foreach (var item in inclueds.Where(s => s.Trim() != string.Empty))
+                            result.Data = data.Include(item).AsNoTracking().ToList();
                     }
                     else
                         result.Data = _dbContext.Set<TEntity>().AsNoTracking().Where(filter).ToList();

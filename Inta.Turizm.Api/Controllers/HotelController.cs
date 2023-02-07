@@ -1,6 +1,7 @@
 ﻿using Inta.Turizm.Business.Abstract;
 using Inta.Turizm.Dto.Concrete;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -20,7 +21,7 @@ namespace Inta.Turizm.Api.Controllers
         [HttpGet]
         public IEnumerable<HotelDto> Get()
         {
-            return _hotelService.Find(null,v=>v.HotelImages).Data;
+            return _hotelService.Find(null, new string[] { "HotelImages"}).Data;
         }
 
         // GET api/<HotelController>/5

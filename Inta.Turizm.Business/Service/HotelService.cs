@@ -26,9 +26,9 @@ namespace Inta.Turizm.Business.Service
             throw new NotImplementedException();
         }
 
-        public DataResult<List<HotelDto>> Find(Expression<Func<Hotel, bool>>? filter, Expression<Func<Hotel, object>>? includes = null)
+        public DataResult<List<HotelDto>> Find(Expression<Func<Hotel, bool>>? filter, string[]? inclueds = null)
         {
-            var data = manager.Find(filter, includes); 
+            var data = manager.Find(filter, inclueds); 
             var result = _mapper.Map<DataResult<List<HotelDto>>>(data);
             return result;
         }
