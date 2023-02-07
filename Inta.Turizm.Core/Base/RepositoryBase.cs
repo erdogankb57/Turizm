@@ -39,7 +39,7 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<TEntity> Get(Expression<Func<TEntity, bool>>? filter, string[]? inclueds = null)
+        public DataResult<TEntity> Get(Expression<Func<TEntity, bool>>? filter, string[]? includes = null)
         {
             DataResult<TEntity> result = new DataResult<TEntity>();
             try
@@ -48,9 +48,16 @@ namespace Inta.Turizm.Core.Base
                 {
                     if (filter != null)
                     {
-                        result.Data = _dbContext.Set<TEntity>().AsNoTracking().SingleOrDefault(filter);
-                        //Bu özellik entity frameworkdaki asnotracking (yani izleme özelliğini) kapatır. Bunu eklemezsek önce get sonra update olduğunda hata alıyoruz.
-                        //_dbContext.Entry<TEntity>(result.Data).State = EntityState.Detached;
+                        var data = _dbContext.Set<TEntity>();
+
+                        if (includes != null)
+                        {
+                            foreach (var item in includes)
+                                result.Data = _dbContext.Set<TEntity>().Include(item).AsNoTracking().SingleOrDefault(filter);
+                        }
+                        else
+                            result.Data = _dbContext.Set<TEntity>().AsNoTracking().SingleOrDefault(filter);
+
                     }
                     result.ResultType = MessageTypeResult.Success;
                 }
@@ -67,7 +74,7 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<TEntity> GetById(int id, string[]? inclueds = null)
+        public DataResult<TEntity> GetById(int id, string[]? includes = null)
         {
             DataResult<TEntity> result = new DataResult<TEntity>();
 
@@ -75,8 +82,15 @@ namespace Inta.Turizm.Core.Base
             {
                 if (_dbContext != null)
                 {
-                    var data = _dbContext.Set<TEntity>().AsNoTracking().SingleOrDefault(s => s.Id == id);
-                    result.Data = data;
+                    var data = _dbContext.Set<TEntity>().AsNoTracking();
+                    if (includes != null)
+                    {
+                        foreach (var item in includes)
+                            result.Data = data.Include(item).AsNoTracking().SingleOrDefault(s => s.Id == id);
+                    }
+                    else
+                        result.Data = data.AsNoTracking().SingleOrDefault(s => s.Id == id);
+
                     //_dbContext.Entry<TEntity>(data).State = EntityState.Detached;
                     result.ResultType = MessageTypeResult.Success;
                 }
@@ -95,7 +109,7 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, string[]? inclueds = null)
+        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, string[]? includes = null)
         {
             DataResult<List<TEntity>> result = new DataResult<List<TEntity>>();
             try
@@ -105,9 +119,9 @@ namespace Inta.Turizm.Core.Base
                     if (filter == null)
                     {
                         var data = _dbContext.Set<TEntity>();
-                        if (inclueds?.Count()>0)
+                        if (includes?.Count() > 0)
                         {
-                            foreach (var item in inclueds.Where(s => s.Trim() != string.Empty))
+                            foreach (var item in includes.Where(s => s.Trim() != string.Empty))
                                 result.Data = data.Include(item).AsNoTracking().ToList();
                         }
                         else
@@ -117,9 +131,9 @@ namespace Inta.Turizm.Core.Base
                     {
                         var data = _dbContext.Set<TEntity>().AsNoTracking().Where(filter);
 
-                        if (inclueds?.Count()>0)
+                        if (includes?.Count() > 0)
                         {
-                            foreach (var item in inclueds.Where(s => s.Trim() != string.Empty))
+                            foreach (var item in includes.Where(s => s.Trim() != string.Empty))
                                 result.Data = data.Include(item).AsNoTracking().ToList();
                         }
                         else

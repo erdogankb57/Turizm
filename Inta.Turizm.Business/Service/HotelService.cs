@@ -26,19 +26,21 @@ namespace Inta.Turizm.Business.Service
             throw new NotImplementedException();
         }
 
-        public DataResult<List<HotelDto>> Find(Expression<Func<Hotel, bool>>? filter, string[]? inclueds = null)
+        public DataResult<List<HotelDto>> Find(Expression<Func<Hotel, bool>>? filter, string[]? includes = null)
         {
-            var data = manager.Find(filter, inclueds); 
+            var data = manager.Find(filter, includes); 
             var result = _mapper.Map<DataResult<List<HotelDto>>>(data);
             return result;
         }
 
-        public DataResult<HotelDto> Get(Expression<Func<Hotel, bool>>? filter = null)
+        public DataResult<HotelDto> Get(Expression<Func<Hotel, bool>>? filter = null, string[]? includes = null)
         {
-            throw new NotImplementedException();
+            var data = manager.Get(filter, includes);
+            var result = _mapper.Map<DataResult<HotelDto>>(data);
+            return result;
         }
 
-        public DataResult<HotelDto> GetById(int id)
+        public DataResult<HotelDto> GetById(int id, string[]? includes = null)
         {
             throw new NotImplementedException();
         }
