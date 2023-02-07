@@ -147,7 +147,9 @@ namespace Inta.Turizm.Core.Base
                         if (includes?.Count() > 0)
                         {
                             foreach (var item in includes.Where(s => s.Trim() != string.Empty))
-                                result.Data = data.Include(item).AsNoTracking().ToList();
+                                data = data.Include(item);
+                            
+                            result.Data = data.AsNoTracking().ToList();
                         }
                         else
                             result.Data = data.AsNoTracking().ToList();

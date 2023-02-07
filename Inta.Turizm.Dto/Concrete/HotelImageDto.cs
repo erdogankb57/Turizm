@@ -13,8 +13,6 @@ namespace Inta.Turizm.Dto.Concrete
     {
         public HotelImageDto()
         {
-			CurrentHotel = new HotelDto();
-
 		}
 		public int Id { get; set; }
 		public int HotelId { get; set; }
@@ -22,7 +20,6 @@ namespace Inta.Turizm.Dto.Concrete
 		public string? Image { get; set; }
 		public DateTime? RecordDate { get; set; }
 		public bool IsActive { get; set; }
-		public virtual HotelDto? CurrentHotel { get; set; }
 
 	}
 }

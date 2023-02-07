@@ -63,6 +63,7 @@ namespace Inta.Turizm.Business.Mapping
             CreateMap<HotelDto, Hotel>();
 
 
+
         }
     }
 }

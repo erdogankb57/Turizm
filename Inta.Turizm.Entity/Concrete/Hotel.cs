@@ -42,5 +42,7 @@ namespace Inta.Turizm.Entity.Concrete
 		public bool IsActive { get; set; }
 
 		virtual public  List<HotelImage> HotelImages { get; set; }
-    }
+		virtual public List<HotelRoom> HotelRooms { get; set; }
+
+	}
 }

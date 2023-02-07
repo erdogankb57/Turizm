@@ -22,7 +22,7 @@ namespace Inta.Turizm.Api.Controllers
         [HttpGet]
         public DataResult<List<HotelDto>> Get()
         {
-            return _hotelService.Find(v => v.Id > 0, new string[] { "HotelImages" }, 0, 10);
+            return _hotelService.Find(v => v.Id > 0, new string[] { "HotelImages", "HotelRooms", "HotelRooms.HotelRoomImages" }, 0, 10);
         }
 
         [HttpGet("{id}")]

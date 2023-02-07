@@ -20,5 +20,7 @@ namespace Inta.Turizm.Dto.Concrete
 
 		[FromBody]
 		public virtual List<HotelImageDto> HotelImages { get; set; }
+		virtual public List<HotelRoomDto> HotelRooms { get; set; }
+
 	}
 }
