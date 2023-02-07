@@ -21,6 +21,8 @@ namespace Inta.Turizm.Api.Controllers
         [HttpGet]
         public IEnumerable<HotelDto> Get()
         {
+            //return _hotelService.Find(null, new string[] { "HotelImages", "HotelImages.HotelVersions" }).Data;
+
             return _hotelService.Find(null, new string[] { "HotelImages"}).Data;
         }
 

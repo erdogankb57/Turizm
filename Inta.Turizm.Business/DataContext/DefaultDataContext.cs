@@ -26,10 +26,12 @@ namespace Inta.Turizm.Business.DataContext
             .HasMany<HotelImage>(g => g.HotelImages)
             .WithOne(s => s.CurrentHotel)
             .HasForeignKey(s => s.HotelId);
+
         }
 
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<HotelImage> HotelImages { get; set; }
+
 
 
 

@@ -36,5 +36,6 @@ namespace Inta.Turizm.Entity.Concrete
         public bool IsActive { get; set; }
         virtual public Hotel CurrentHotel { get; set; }
 
+
     }
 }
