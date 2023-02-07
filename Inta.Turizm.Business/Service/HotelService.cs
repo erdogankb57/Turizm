@@ -42,7 +42,9 @@ namespace Inta.Turizm.Business.Service
 
         public DataResult<HotelDto> GetById(int id, string[]? includes = null)
         {
-            throw new NotImplementedException();
+            var data = manager.GetById(1, includes);
+            var result = _mapper.Map<DataResult<HotelDto>>(data);
+            return result;
         }
 
         public DataResult<HotelDto> Save(HotelDto dto)
