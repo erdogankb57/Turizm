@@ -13,7 +13,7 @@ namespace Inta.Turizm.Entity.Concrete
     {
         public HotelRoom()
         {
-
+            HotelRoomImages = new List<HotelRoomImage>();
         }
 
         public int Id { get; set; }

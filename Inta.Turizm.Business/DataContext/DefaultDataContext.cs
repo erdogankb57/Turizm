@@ -35,7 +35,7 @@ namespace Inta.Turizm.Business.DataContext
             modelBuilder.Entity<HotelRoom>()
             .HasMany<HotelRoomImage>(g => g.HotelRoomImages)
             .WithOne(s => s.CurrentHotelRoom)
-            .HasForeignKey(s => s.HoteRoomlId);
+            .HasForeignKey(s => s.HotelRoomlId);
 
         }
 

@@ -11,6 +11,7 @@ namespace Inta.Turizm.Dto.Concrete
     {
         public HotelRoomDto()
         {
+            HotelRoomImages = new List<HotelRoomImageDto>();
         }
 
         public int Id { get; set; }

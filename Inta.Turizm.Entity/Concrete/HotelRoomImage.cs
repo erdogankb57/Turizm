@@ -17,7 +17,7 @@ namespace Inta.Turizm.Entity.Concrete
         }
 
         public int Id { get; set; }
-        public int HoteRoomlId { get; set; }
+        public int HotelRoomlId { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         public DateTime? RecordDate { get; set; }

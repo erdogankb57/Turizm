@@ -8,7 +8,9 @@ namespace Inta.Turizm.Dto.Concrete
         public HotelDto()
         {
 			this.HotelImages = new List<HotelImageDto>();
-        }
+			this.HotelRooms = new List<HotelRoomDto>();
+
+		}
 		public int Id { get; set; }
 		public string? Name { get; set; }
 		public string? Explanation { get; set; }
