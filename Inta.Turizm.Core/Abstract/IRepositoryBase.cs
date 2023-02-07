@@ -11,8 +11,8 @@ namespace Inta.Turizm.Core.Abstract
 {
     public interface IRepositoryBase<TEntity, TContext> where TEntity : class, IEntity, new() where TContext : DbContext, new()
     {
-        DataResult<TEntity> GetById(int id);
-        DataResult<TEntity> Get(Expression<Func<TEntity, bool>>? filter);
+        DataResult<TEntity> GetById(int id, string[]? inclueds = null);
+        DataResult<TEntity> Get(Expression<Func<TEntity, bool>>? filter, string[]? inclueds = null);
         DataResult<TEntity> Update(TEntity Entity, string[]? updateFields = null);
         DataResult<TEntity> Save(TEntity Entity);
         DataResult<TEntity> Delete(TEntity Entity);

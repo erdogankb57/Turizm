@@ -39,7 +39,7 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<TEntity> Get(Expression<Func<TEntity, bool>>? filter)
+        public DataResult<TEntity> Get(Expression<Func<TEntity, bool>>? filter, string[]? inclueds = null)
         {
             DataResult<TEntity> result = new DataResult<TEntity>();
             try
@@ -67,7 +67,7 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<TEntity> GetById(int id)
+        public DataResult<TEntity> GetById(int id, string[]? inclueds = null)
         {
             DataResult<TEntity> result = new DataResult<TEntity>();
 
@@ -105,11 +105,26 @@ namespace Inta.Turizm.Core.Base
                     if (filter == null)
                     {
                         var data = _dbContext.Set<TEntity>();
-                        foreach (var item in inclueds.Where(s => s.Trim() != string.Empty))
-                            result.Data = data.Include(item).AsNoTracking().ToList();
+                        if (inclueds?.Count()>0)
+                        {
+                            foreach (var item in inclueds.Where(s => s.Trim() != string.Empty))
+                                result.Data = data.Include(item).AsNoTracking().ToList();
+                        }
+                        else
+                            result.Data = data.AsNoTracking().ToList();
                     }
                     else
-                        result.Data = _dbContext.Set<TEntity>().AsNoTracking().Where(filter).ToList();
+                    {
+                        var data = _dbContext.Set<TEntity>().AsNoTracking().Where(filter);
+
+                        if (inclueds?.Count()>0)
+                        {
+                            foreach (var item in inclueds.Where(s => s.Trim() != string.Empty))
+                                result.Data = data.Include(item).AsNoTracking().ToList();
+                        }
+                        else
+                            result.Data = data.AsNoTracking().ToList();
+                    }
 
                     result.ResultType = MessageTypeResult.Success;
                 }

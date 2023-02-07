@@ -23,7 +23,7 @@ namespace Inta.Turizm.Api.Controllers
         {
             //return _hotelService.Find(null, new string[] { "HotelImages", "HotelImages.HotelVersions" }).Data;
 
-            return _hotelService.Find(null, new string[] { "HotelImages"}).Data;
+            return _hotelService.Find(v=> v.Id>0 && v.HotelImages.Any(), new string[] { "HotelImages"}).Data;
         }
 
         // GET api/<HotelController>/5
