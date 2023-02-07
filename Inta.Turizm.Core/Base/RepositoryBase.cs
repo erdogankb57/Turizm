@@ -109,7 +109,7 @@ namespace Inta.Turizm.Core.Base
             return result;
         }
 
-        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, string[]? includes = null)
+        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, string[]? includes = null, int? skipNumber = null, int? takeNumber = null)
         {
             DataResult<List<TEntity>> result = new DataResult<List<TEntity>>();
             try
@@ -118,7 +118,14 @@ namespace Inta.Turizm.Core.Base
                 {
                     if (filter == null)
                     {
-                        var data = _dbContext.Set<TEntity>();
+                        IQueryable<TEntity> data = _dbContext.Set<TEntity>();
+
+                        if (skipNumber != null)
+                            data = data.Skip(skipNumber ?? 0);
+
+                        if (takeNumber != null)
+                            data = data.Take(takeNumber ?? 0);
+
                         if (includes?.Count() > 0)
                         {
                             foreach (var item in includes.Where(s => s.Trim() != string.Empty))
@@ -129,7 +136,13 @@ namespace Inta.Turizm.Core.Base
                     }
                     else
                     {
-                        var data = _dbContext.Set<TEntity>().AsNoTracking().Where(filter);
+                        IQueryable<TEntity> data = _dbContext.Set<TEntity>().AsNoTracking().Where(filter);
+
+                        if (skipNumber != null)
+                            data = data.Skip(skipNumber ?? 0);
+
+                        if (takeNumber != null)
+                            data = data.Take(takeNumber ?? 0);
 
                         if (includes?.Count() > 0)
                         {

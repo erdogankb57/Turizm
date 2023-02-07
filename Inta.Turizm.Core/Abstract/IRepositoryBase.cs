@@ -16,6 +16,6 @@ namespace Inta.Turizm.Core.Abstract
         DataResult<TEntity> Update(TEntity Entity, string[]? updateFields = null);
         DataResult<TEntity> Save(TEntity Entity);
         DataResult<TEntity> Delete(TEntity Entity);
-        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, string[]? includes= null);
+        public DataResult<List<TEntity>> Find(Expression<Func<TEntity, bool>>? filter, string[]? includes = null, int? skipNumber = null, int? takeNumber = null);
     }
 }

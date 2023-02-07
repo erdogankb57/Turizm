@@ -19,12 +19,12 @@ namespace Inta.Turizm.Api.Controllers
         }
         // GET: api/<HotelController>
         [HttpGet]
-        public HotelDto Get()
+        public List<HotelDto> Get()
         {
             //return _hotelService.Find(null, new string[] { "HotelImages", "HotelImages.HotelVersions" }).Data;
 
             //return _hotelService.GetById(1).Data;
-            return _hotelService.Get(v=> v.Id>0 && v.HotelImages.Any(), new string[] { "HotelImages"}).Data;
+            return _hotelService.Find(v => v.Id > 0, new string[] { "HotelImages" }, 0, 10).Data;
         }
 
         // GET api/<HotelController>/5
