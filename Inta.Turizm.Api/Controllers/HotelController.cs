@@ -4,8 +4,6 @@ using Inta.Turizm.Dto.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Inta.Turizm.Api.Controllers
 {
     [Route("api/[controller]")]
