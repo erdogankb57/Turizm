@@ -2,6 +2,7 @@
 using Inta.Turizm.Business.Service;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -41,32 +42,43 @@ foreach (var intfc in allProviderTypes.Where(t => t.IsInterface && t.Namespace.C
 
 
 /*JWT Token Start*/
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+
 }).AddJwtBearer(o =>
 {
+    o.SaveToken = true; ;
+    o.RequireHttpsMetadata = false;
     o.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidIssuer = builder.Configuration["AppSettings:ValidIssuer"],
-        ValidAudience = builder.Configuration["AppSettings:ValidAudience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Secret"])),
         ValidateIssuer = true,
         ValidateAudience = true,
-        ValidateLifetime = false,
+        ValidAudience = builder.Configuration["AppSettings:ValidAudience"],
+        ValidIssuer = builder.Configuration["AppSettings:ValidIssuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Secret"])),
+
+        ValidateLifetime = true,
         ValidateIssuerSigningKey = true
     };
 });
 
 builder.Services.AddAuthorization();
+
+
 /*JWT Token End*/
 
-
+builder.Services.AddMvc();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
+
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -78,8 +90,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+/*JWT Token Start*/
+app.UseAuthentication();
+app.UseRouting();
 app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+/*JWT Token End*/
 
-app.MapControllers();
+//app.MapControllers();
 
 app.Run();

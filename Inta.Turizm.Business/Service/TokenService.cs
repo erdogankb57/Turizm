@@ -21,7 +21,8 @@ namespace Inta.Turizm.Business.Service
             if (configuration == null)
                 return Task.FromResult(new GenerateTokenResponse { });
 
-            SymmetricSecurityKey symmetricSecurityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration.GetSection("Secret").ToString()));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["AppSettings:Secret"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             var dateTimeNow = DateTime.UtcNow;
 
@@ -34,7 +35,7 @@ namespace Inta.Turizm.Business.Service
                     },
                     notBefore: dateTimeNow,
                     expires: dateTimeNow.Add(TimeSpan.FromMinutes(500)),
-                    signingCredentials: new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256)
+                    signingCredentials: credentials
                 );
                         
             return Task.FromResult(new GenerateTokenResponse

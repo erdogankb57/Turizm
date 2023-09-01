@@ -18,7 +18,8 @@ namespace Inta.Turizm.Api.Controllers
             _hotelService = hotelService;
         }
 
-        [HttpGet]
+        [Authorize]
+        [HttpGet("GetHotelList")]
         public DataResult<List<HotelDto>> Get()
         {
             return _hotelService.Find(v => v.Id>0, new string[] { "HotelImages", "HotelRooms", "HotelRooms.HotelRoomImages" }, 0, 10);
