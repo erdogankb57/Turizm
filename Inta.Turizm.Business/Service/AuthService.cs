@@ -26,14 +26,15 @@ namespace Inta.Turizm.Business.Service
 
             if (request.Username == "erdogan" && request.Password == "123456")
             {
-                var token = tokenService.GenerateToken(new GenerateTokenRequest
+                /*Access Token*/
+                var accessToken = tokenService.GenerateToken(new GenerateTokenRequest
                 {
                     Username = request.Username
                 });
 
-                response.AccessTokenExpireDate = token.Result.TokenExpireDate;
+                response.AccessTokenExpireDate = accessToken.Result.TokenExpireDate;
                 response.AuthenticateResult = true;
-                response.AuthToken = token.Result.Token;
+                response.AuthToken = accessToken.Result.Token;
             }
 
             return Task.FromResult(response);

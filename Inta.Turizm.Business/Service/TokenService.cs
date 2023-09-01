@@ -29,7 +29,8 @@ namespace Inta.Turizm.Business.Service
                     issuer: configuration["AppSettings:ValidIssuer"],
                     audience: configuration["AppSettings:ValidAudience"],
                     claims: new List<Claim> {
-                    new Claim("userName", request.Username)
+                    new Claim("userName", request.Username),
+                    new Claim("Time",DateTime.Now.ToLongDateString())
                     },
                     notBefore: dateTimeNow,
                     expires: dateTimeNow.Add(TimeSpan.FromMinutes(500)),
