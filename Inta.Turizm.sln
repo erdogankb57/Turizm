@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inta.Turizm.Api", "Inta.Turizm.Api\Inta.Turizm.Api.csproj", "{D638E264-CA2F-4175-A5E9-F9D67C9D0A13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Data", "0.Data", "{BA3CFB87-FD81-4267-A797-9745131A42A1}"
+	ProjectSection(SolutionItems) = preProject
+		2023.09.01_IntaHotel.sql = 2023.09.01_IntaHotel.sql
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inta.Turizm.Core", "Inta.Turizm.Core\Inta.Turizm.Core.csproj", "{FEB08496-FFFE-4852-BE98-7F29DA2292F8}"
 EndProject
@@ -19,7 +22,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inta.Turizm.Dto", "Inta.Tur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inta.Turizm.Business", "Inta.Turizm.Business\Inta.Turizm.Business.csproj", "{6B1FC8AB-BAFC-4952-AF53-D8BD112A3C41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inta.Turizm.Logging", "Inta.Turizm.Logging\Inta.Turizm.Logging.csproj", "{3E3D8768-329B-4D78-94F2-F1A1FCF54D63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inta.Turizm.Logging", "Inta.Turizm.Logging\Inta.Turizm.Logging.csproj", "{3E3D8768-329B-4D78-94F2-F1A1FCF54D63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
