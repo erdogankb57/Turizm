@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Inta.Turizm.Entity\Inta.Turizm.Entity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Token\" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Inta.Turizm.Business.Abstract;
 using Inta.Turizm.Core.Model;
 using Inta.Turizm.Dto.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
 
@@ -20,7 +21,7 @@ namespace Inta.Turizm.Api.Controllers
         [HttpGet]
         public DataResult<List<HotelDto>> Get()
         {
-            return _hotelService.Find(v => v.Id > 0, new string[] { "HotelImages", "HotelRooms", "HotelRooms.HotelRoomImages" }, 0, 10);
+            return _hotelService.Find(v => v.Id>0, new string[] { "HotelImages", "HotelRooms", "HotelRooms.HotelRoomImages" }, 0, 10);
         }
 
         [HttpGet("{id}")]

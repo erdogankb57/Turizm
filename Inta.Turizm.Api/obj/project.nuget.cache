@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "v3DSqZSzbLB3ujm2b5hbkDWKl+g8p/wka3cOa271QNZfTIAorvHjDOMjymH8UQkGL+/aqrVOMSGtC5RRz9T4zg==",
+  "dgSpecHash": "3w1YiQQdYbeLfXijzq47s/OREKaJt03msXUwnEjh5i484EQ0PDwfmka+LEAgXjJW5pP+ZEqyEqGQ10peqOtwGA==",
   "success": true,
   "projectFilePath": "D:\\Repos\\Turizm\\Inta.Turizm.Api\\Inta.Turizm.Api.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\erdog\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\erdog\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.21\\microsoft.aspnetcore.authentication.jwtbearer.6.0.21.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\erdog\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
