@@ -9,7 +9,7 @@ namespace Inta.Turizm.Business.Model
     public class UserLoginResponse
     {
         public bool AuthenticateResult { get; set; }
-        public string AuthToken { get; set; }
+        public string AccessToken { get; set; }
         public DateTime AccessTokenExpireDate { get; set; }
 
         public string RefreshToken { get; set; }

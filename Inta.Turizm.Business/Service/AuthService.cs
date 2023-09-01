@@ -34,7 +34,7 @@ namespace Inta.Turizm.Business.Service
 
                 response.AccessTokenExpireDate = accessToken.Result.TokenExpireDate;
                 response.AuthenticateResult = true;
-                response.AuthToken = accessToken.Result.Token;
+                response.AccessToken = accessToken.Result.Token;
             }
 
             return Task.FromResult(response);
