@@ -23,8 +23,9 @@ namespace Inta.Turizm.Business.Service
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["AppSettings:Secret"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
             var dateTimeNow = DateTime.UtcNow;
+            var expressTime = dateTimeNow.Add(TimeSpan.FromMinutes(500));
+            string Token = string.Empty;
 
             JwtSecurityToken jwt = new JwtSecurityToken(
                     issuer: configuration["AppSettings:ValidIssuer"],
@@ -35,14 +36,16 @@ namespace Inta.Turizm.Business.Service
                     new Claim("LoginDate", DateTime.Now.ToLongDateString())
                     },
                     notBefore: dateTimeNow,
-                    expires: dateTimeNow.Add(TimeSpan.FromMinutes(500)),
+                    expires: expressTime,
                     signingCredentials: credentials
                 );
-                        
+
+            Token = new JwtSecurityTokenHandler().WriteToken(jwt);
+
             return Task.FromResult(new GenerateTokenResponse
             {
-                Token = new JwtSecurityTokenHandler().WriteToken(jwt),
-                TokenExpireDate = dateTimeNow.Add(TimeSpan.FromMinutes(500))
+                Token = Token,
+                TokenExpireDate = expressTime
             });
         }
     }
