@@ -1,5 +1,0 @@
-D:\Repos\Turizm\UdemyConsoleDocker\UdemyConsoleDocker\bin\Release\net6.0\publish\UdemyConsoleDocker.exe
-D:\Repos\Turizm\UdemyConsoleDocker\UdemyConsoleDocker\bin\Release\net6.0\publish\UdemyConsoleDocker.dll
-D:\Repos\Turizm\UdemyConsoleDocker\UdemyConsoleDocker\bin\Release\net6.0\publish\UdemyConsoleDocker.deps.json
-D:\Repos\Turizm\UdemyConsoleDocker\UdemyConsoleDocker\bin\Release\net6.0\publish\UdemyConsoleDocker.runtimeconfig.json
-D:\Repos\Turizm\UdemyConsoleDocker\UdemyConsoleDocker\bin\Release\net6.0\publish\UdemyConsoleDocker.pdb
